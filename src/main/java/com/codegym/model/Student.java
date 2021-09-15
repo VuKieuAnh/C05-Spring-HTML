@@ -1,11 +1,29 @@
 package com.codegym.model;
 
+
 public class Student {
     private int id;
     private String name;
     private String email;
+    private String img;
 
     public Student() {
+    }
+
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public Student(int id, String name, String email, String img) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.img = img;
     }
 
     public Student(int id, String name, String email) {

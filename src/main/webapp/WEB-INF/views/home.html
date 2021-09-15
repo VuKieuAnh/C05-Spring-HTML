@@ -12,12 +12,16 @@
         <td>id</td>
         <td>name</td>
         <td>email</td>
+        <td>image</td>
     </tr>
     <th:block>
         <tr th:each="s : ${list}">
             <td th:text="${s.id}"></td>
             <td th:text="${s.name}"></td>
             <td th:text="${s.email}"></td>
+            <td>
+                <img th:src="@{'/image/'+${s.img}}" width="100" alt="">
+            </td>
         </tr>
     </th:block>
 </table>

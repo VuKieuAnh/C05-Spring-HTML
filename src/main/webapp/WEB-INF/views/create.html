@@ -6,18 +6,19 @@
 </head>
 <body>
 <div th:replace="layout::menu"></div>
-<form method="post" th:object="${student}">
-    <input type="text" th:field="*{id}">
-    <input type="text" th:field="*{name}">
-    <input type="text" th:field="*{email}">
-    <button type="submit">Create</button>
-</form>
-<!--<form method="post" >-->
-<!--    <input type="text" id="id" name="id">-->
-<!--    <input type="text" id="name" name="name" >-->
-<!--    <input type="text" id="email" name="email">-->
+<!--<form method="post" th:object="${student}">-->
+<!--    <input type="text" th:field="*{id}">-->
+<!--    <input type="text" th:field="*{name}">-->
+<!--    <input type="text" th:field="*{email}">-->
 <!--    <button type="submit">Create</button>-->
 <!--</form>-->
+<form method="post" enctype="multipart/form-data" >
+    <input type="text" id="id" name="id">
+    <input type="text" id="name" name="name" >
+    <input type="text" id="email" name="email">
+    <input type="file" id="img" name="img">
+    <button type="submit">Create</button>
+</form>
 <div th:replace="layout::footer"></div>
 </body>
 </html>
