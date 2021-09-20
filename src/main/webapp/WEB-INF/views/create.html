@@ -17,6 +17,12 @@
     <input type="text" id="name" name="name" >
     <input type="text" id="email" name="email">
     <input type="file" id="img" name="img">
+    <select name="classes" id="classes">
+        <th:block th:each="c:${classes}">
+            <option th:text="${c.name}" th:value="${c.id}"></option>
+        </th:block>
+
+    </select>
     <button type="submit">Create</button>
 </form>
 <div th:replace="layout::footer"></div>

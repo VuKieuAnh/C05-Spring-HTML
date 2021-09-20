@@ -2,14 +2,29 @@ package com.codegym.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+//POJO
 @Entity
 public class Student {
     @Id
-    private int id;
+    private Integer id;
     private String name;
     private String email;
     private String img;
+
+    @ManyToOne
+    @JoinColumn(name = "class_id")
+    private Classes classes;
+
+    public Classes getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Classes classes) {
+        this.classes = classes;
+    }
 
     public Student() {
     }
@@ -23,24 +38,24 @@ public class Student {
         this.img = img;
     }
 
-    public Student(int id, String name, String email, String img) {
+    public Student(Integer id, String name, String email, String img) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.img = img;
     }
 
-    public Student(int id, String name, String email) {
+    public Student(Integer id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

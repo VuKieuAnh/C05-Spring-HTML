@@ -1,9 +1,11 @@
 package com.codegym.controller;
 
+import com.codegym.model.Classes;
 import com.codegym.model.Student;
 import com.codegym.model.StudentForm;
 import com.codegym.service.IStudentService;
 import com.codegym.service.StudentService;
+import com.codegym.service.classes.IClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -31,11 +33,20 @@ public class HomeController {
     private String fileUpload;
 
     @Autowired
+    private IClassesService classesService;
+
+    @ModelAttribute("classes")
+    public Iterable<Classes> classes(){
+        return classesService.findAll();
+    }
+
+
+    @Autowired
     private IStudentService studentService;
 
     @GetMapping("")
     public String home(Model model){
-        List<Student> studentList = studentService.findAll();
+        Iterable<Student> studentList = studentService.findAll();
         model.addAttribute("list", studentList);
         return "home";
     }
@@ -66,6 +77,7 @@ public class HomeController {
         student1.setId(studentForm.getId());
         student1.setName(studentForm.getName());
         student1.setEmail(studentForm.getEmail());
+        student1.setClasses(studentForm.getClasses());
         //b3: Save lai student
         studentService.save(student1);
         return "redirect:/students";

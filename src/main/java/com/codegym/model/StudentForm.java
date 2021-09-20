@@ -7,6 +7,23 @@ public class StudentForm {
     private String name;
     private String email;
     private MultipartFile img;
+    private Classes classes;
+
+    public Classes getClasses() {
+        return classes;
+    }
+
+    public StudentForm(int id, String name, String email, MultipartFile img, Classes classes) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.img = img;
+        this.classes = classes;
+    }
+
+    public void setClasses(Classes classes) {
+        this.classes = classes;
+    }
 
     public StudentForm() {
     }
