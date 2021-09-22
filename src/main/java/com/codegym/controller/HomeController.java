@@ -38,6 +38,7 @@ public class HomeController {
     @ModelAttribute("classes")
     public Iterable<Classes> classes(){
         return classesService.findAll();
+        //ghi log
     }
 
 
@@ -48,11 +49,13 @@ public class HomeController {
     public String home(Model model){
         Iterable<Student> studentList = studentService.findAll();
         model.addAttribute("list", studentList);
+        //ghi log
         return "home";
     }
 
     @GetMapping("/create")
     public ModelAndView creatForm(){
+        //ghi log
         ModelAndView modelAndView = new ModelAndView("create");
         modelAndView.addObject("student", new StudentForm());
         return modelAndView;
