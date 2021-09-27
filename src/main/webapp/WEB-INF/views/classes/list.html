@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>tao la trang chu day</h1>
+<div th:replace="layout::menu"></div>
+<input id="id"/>
+<input id="name"/>
+<button onclick="taomoi()" >Tao moi</button>
+<table>
+  <tr>
+    <td>id</td>
+    <td>name</td>
+  </tr>
+  <tbody id="classList">
+  <th:block>
+    <tr th:each="s : ${classes}">
+      <td th:text="${s.id}"></td>
+      <td th:text="${s.name}"></td>
+      <td><a th:href="${s.id}" onclick="deleteClass(this)">Xoá</a></td>
+    </tr>
+  </th:block>
+  </tbody>
+
+</table>
+<script>
+  function taomoi(){
+    //lay du lieu
+    let id = $("#id").val();
+    let name = $("#name").val();
+    //tao doi tuong
+    let newClass = {
+      id:id,
+      name: name
+    }
+    //goi ajax
+    $.ajax({
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      type:"POST",
+      data:JSON.stringify(newClass),
+      url:'/classes',
+      success: function (){
+        showAllClass();
+      }
+    })
+  }
+  // document.getElementsByClassName("deleteClass").click
+  function deleteClass(e){
+    //chặn sự kiện mặc định
+    event.preventDefault();
+    let idClass = e.getAttribute("href");
+    $.ajax({
+      type:"DELETE",
+      //gui request
+      //loi goi API
+      url:"/classes/delete/"+idClass,
+      success: function (data){
+        //ghi lại danh sách bằng js
+        showAllClass();
+      }
+    })
+  };
+  function showAllClass(){
+    $.ajax({
+      type: "GET",
+      url: "/classes",
+      success: function (data) {
+        //vẽ lại bảng
+        let content = '';
+        for (let i = 0; i < data.length; i++) {
+          content += `<tr>
+<td>${data[i].id}</td>
+<td>${data[i].name}</td>
+<td><a href="${data[i].id}" onclick="deleteClass(this)">Xoa</a></td>
+                    </tr>`
+        }
+        document.getElementById("classList").innerHTML = content;
+      }
+    });
+  }
+</script>
+</body>
+</html>

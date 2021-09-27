@@ -18,6 +18,11 @@ public class ClassService implements IClassesService {
     }
 
     @Override
+    public void delete(Integer id) {
+        classRepository.deleteById(id);
+    }
+
+    @Override
     public Classes findById(Integer id) {
         return classRepository.findById(id).get();
     }

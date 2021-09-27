@@ -6,4 +6,5 @@ public interface IClassesService {
     Iterable<Classes> findAll();
     void save(Classes student);
     Classes findById(Integer id);
+    void delete(Integer id);
 }

@@ -1,9 +1,9 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 
 //POJO
 @Entity
@@ -16,6 +16,7 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "class_id")
+    @JsonBackReference
     private Classes classes;
 
     public Classes getClasses() {

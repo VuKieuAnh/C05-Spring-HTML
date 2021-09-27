@@ -1,8 +1,9 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,8 @@ public class Classes {
 
     private String name;
 
-    @OneToMany(targetEntity = Student.class)
+    @OneToMany(targetEntity = Student.class, cascade= CascadeType.PERSIST, fetch= FetchType.EAGER)
+    @JsonManagedReference
     private List<Student> students;
 
     public List<Student> getStudents() {

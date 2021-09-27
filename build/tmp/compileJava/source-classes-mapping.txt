@@ -1,32 +1,34 @@
+com/codegym/repo/IClassRepository.java
+ com.codegym.repo.IClassRepository
+com/codegym/repo/IRepo.java
+ com.codegym.repo.IRepo
+com/codegym/aspect/MyLogger.java
+ com.codegym.aspect.MyLogger
+com/codegym/repo/IStudentRepository.java
+ com.codegym.repo.IStudentRepository
+com/codegym/config/AppInit.java
+ com.codegym.config.AppInit
+com/codegym/model/Classes.java
+ com.codegym.model.Classes
 com/codegym/formater/ClasseFormatter.java
  com.codegym.formater.ClasseFormatter
 com/codegym/service/StudentService.java
  com.codegym.service.StudentService
-com/codegym/repo/IStudentRepository.java
- com.codegym.repo.IStudentRepository
-com/codegym/service/StudentServiceUseRepo.java
- com.codegym.service.StudentServiceUseRepo
-com/codegym/config/AppInit.java
- com.codegym.config.AppInit
-com/codegym/service/classes/IClassesService.java
- com.codegym.service.classes.IClassesService
-com/codegym/model/Student.java
- com.codegym.model.Student
-com/codegym/repo/IRepo.java
- com.codegym.repo.IRepo
-com/codegym/model/Classes.java
- com.codegym.model.Classes
-com/codegym/service/IStudentService.java
- com.codegym.service.IStudentService
-com/codegym/repo/IClassRepository.java
- com.codegym.repo.IClassRepository
+com/codegym/config/AppConfig.java
+ com.codegym.config.AppConfig
+com/codegym/controller/ClassController.java
+ com.codegym.controller.ClassController
 com/codegym/controller/HomeController.java
  com.codegym.controller.HomeController
+com/codegym/service/StudentServiceUseRepo.java
+ com.codegym.service.StudentServiceUseRepo
 com/codegym/model/StudentForm.java
  com.codegym.model.StudentForm
 com/codegym/service/classes/ClassService.java
  com.codegym.service.classes.ClassService
-com/codegym/config/AppConfig.java
- com.codegym.config.AppConfig
-com/codegym/aspect/MyLogger.java
- com.codegym.aspect.MyLogger
+com/codegym/service/classes/IClassesService.java
+ com.codegym.service.classes.IClassesService
+com/codegym/model/Student.java
+ com.codegym.model.Student
+com/codegym/service/IStudentService.java
+ com.codegym.service.IStudentService
