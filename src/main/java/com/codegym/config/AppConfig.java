@@ -1,12 +1,14 @@
 package com.codegym.config;
 
+import com.codegym.aspect.CustomSuccessHandler;
 import com.codegym.aspect.MyLogger;
 import com.codegym.formater.ClasseFormatter;
 import com.codegym.service.IStudentService;
-import com.codegym.service.StudentService;
 import com.codegym.service.StudentServiceUseRepo;
 import com.codegym.service.classes.ClassService;
 import com.codegym.service.classes.IClassesService;
+import com.codegym.service.userservice.IAppUserService;
+import com.codegym.service.userservice.UserService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +29,6 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -182,7 +183,17 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     }
 
     @Bean
+    public IAppUserService userService(){
+        return new UserService();
+    }
+
+    @Bean
     public MyLogger myLogger(){
         return new MyLogger();
+    }
+
+    @Bean
+    public CustomSuccessHandler customSuccessHandler(){
+        return new CustomSuccessHandler();
     }
 }

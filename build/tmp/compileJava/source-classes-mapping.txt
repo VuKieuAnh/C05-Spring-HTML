@@ -6,16 +6,16 @@ com/codegym/aspect/MyLogger.java
  com.codegym.aspect.MyLogger
 com/codegym/repo/IStudentRepository.java
  com.codegym.repo.IStudentRepository
-com/codegym/config/AppInit.java
- com.codegym.config.AppInit
+com/codegym/config/SecurityInit.java
+ com.codegym.config.SecurityInit
 com/codegym/model/Classes.java
  com.codegym.model.Classes
 com/codegym/formater/ClasseFormatter.java
  com.codegym.formater.ClasseFormatter
 com/codegym/service/StudentService.java
  com.codegym.service.StudentService
-com/codegym/config/AppConfig.java
- com.codegym.config.AppConfig
+com/codegym/service/IStudentService.java
+ com.codegym.service.IStudentService
 com/codegym/controller/ClassController.java
  com.codegym.controller.ClassController
 com/codegym/controller/HomeController.java
@@ -30,5 +30,27 @@ com/codegym/service/classes/IClassesService.java
  com.codegym.service.classes.IClassesService
 com/codegym/model/Student.java
  com.codegym.model.Student
-com/codegym/service/IStudentService.java
- com.codegym.service.IStudentService
+com/codegym/repo/IAppRoleRepo.java
+ com.codegym.repo.IAppRoleRepo
+com/codegym/model/AppUser.java
+ com.codegym.model.AppUser
+com/codegym/repo/IAppUserRepo.java
+ com.codegym.repo.IAppUserRepo
+com/codegym/model/AppRole.java
+ com.codegym.model.AppRole
+com/codegym/service/userservice/IAppUserService.java
+ com.codegym.service.userservice.IAppUserService
+com/codegym/service/userservice/UserService.java
+ com.codegym.service.userservice.UserService
+com/codegym/controller/Page403Controller.java
+ com.codegym.controller.Page403Controller
+com/codegym/controller/GeneralController.java
+ com.codegym.controller.GeneralController
+com/codegym/config/AppConfig.java
+ com.codegym.config.AppConfig
+com/codegym/aspect/CustomSuccessHandler.java
+ com.codegym.aspect.CustomSuccessHandler
+com/codegym/config/AppInit.java
+ com.codegym.config.AppInit
+com/codegym/config/SecurityConfig.java
+ com.codegym.config.SecurityConfig
