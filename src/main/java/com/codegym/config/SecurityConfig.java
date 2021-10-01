@@ -1,5 +1,6 @@
 package com.codegym.config;
 
+import com.codegym.aspect.CustomSuccessHandler;
 import com.codegym.service.userservice.IAppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/students/**", "/admin**").access("hasRole('ADMIN')")
                 .antMatchers("/classes/**", "/user**").access("hasRole('USER')")
                 .and()
-                .formLogin()
+                .formLogin().successHandler(new CustomSuccessHandler())
                 .and().csrf()
         .and().exceptionHandling().accessDeniedPage("/khongcoquyen");
     }
